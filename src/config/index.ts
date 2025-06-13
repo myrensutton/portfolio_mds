@@ -1,8 +1,8 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Myren Sutton - Biomedical and Bioinformatics Engineer",
+  author: "Myren DeShawn Sutton",
   description:
     "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
   lang: "en",
@@ -25,11 +25,11 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Myren Sutton",
+    specialty: "Bioinformatics | Biomedical Engineering | Biological Engineering",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "A young dapper young genetleman, smart intelligent, and most importantly caring for his beautiful girl, Aaliyah.",
+    email: "myrensutton@gmail.com",
   },
   experience: [
     {
