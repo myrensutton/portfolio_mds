@@ -88,7 +88,7 @@ export const SITE_CONTENT: SiteContent = {
 
       Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/profilePhoto.png",
   },
 };
 
