@@ -64,12 +64,12 @@ export const SITE_CONTENT: SiteContent = {
     },
     {
       company: "University of Missouri - Columbia | Dr. Trupti Joshi Research Lab",
-      position: "Residential Advisor",
+      position: "Bioinformatics Research Assistant",
       startDate: "August 2023",
       endDate: "May 2026",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Assisted in developing visualization tools for soybean genomic data using R and R Shiny.",
+        "Participated in weekly seminars to explore new bioinformatics technologies and methodologies.",
       ],
     },
   ],
