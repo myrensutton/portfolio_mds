@@ -3,10 +3,9 @@ import type { SiteConfig, SiteContent } from "../types";
 export const SITE_CONFIG: SiteConfig = {
   title: "Myren Sutton - Bioinformatics and Biomedical Engineer",
   author: "Myren DeShawn Sutton",
-  description:
-  "Hello! .",
+  description: "Hello!",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/tinyhead.png",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
@@ -16,8 +15,8 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LinkedIn", href: "https://www.linkedin.com/in/myren-sutton-ab233221b" },
     { text: "Github", href: "https://github.com/ddsnph" },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "",
+  canonicalURL: "",
 };
 
 export const SITE_CONTENT: SiteContent = {
@@ -25,7 +24,7 @@ export const SITE_CONTENT: SiteContent = {
     name: "Myren Sutton",
     specialty: "Bioinformatics | Biomedical Engineering | Biological Engineering",
     summary:
-      "A young dapper young genetleman, smart intelligent, and most importantly caring for his beautiful girl, Aaliyah.",
+      "I’m Myren Sutton, a biomedical engineer and bioinformatics researcher passionate about leveraging machine learning, genomic data analysis, and innovative design to address critical healthcare challenges. I'm actively seeking employment opportunities in bioinformatics, data science, and healthcare technology following my Master's graduation, aiming to create impactful and inclusive medical solutions.",
     email: "myrensutton@gmail.com",
   },
   experience: [
@@ -98,7 +97,7 @@ export const SITE_CONTENT: SiteContent = {
       image: "/clone-ig.png",
     },
   ],
-  
+
   about: {
     description: `
  Hi, I’m Myren Sutton! I'm a bioinformatics researcher and biomedical engineer passionate about using data to solve real world healthcare problems. My work focuses on combining machine learning, bioinformatics, and practical engineering to create tools that actually make a difference for patients.
