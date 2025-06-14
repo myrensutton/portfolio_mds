@@ -1,7 +1,7 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Myren Sutton - Biomedical and Bioinformatics Engineer",
+  title: "Myren Sutton - Bioinformatics and Biomedical Engineer",
   author: "Myren DeShawn Sutton",
   description:
   "Hello! .",
@@ -30,35 +30,51 @@ export const SITE_CONTENT: SiteContent = {
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Pfizer Pharmaceuticals",
+      position: "Bioprocessing Research and Development Intern",
+      startDate: "June 2025",
+      endDate: "August 2025",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Collaborated within the biotherapeutics and pharmaceuticals division, creating automation scripts to enhance operational efficiency.",
+        "Engaged in hands on experience with machine automation processes, optimizing laboratory workflow.",
+
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "University of Missouri - Columbia",
+      position: "Residential Advisor",
+      startDate: "August 2023",
+      endDate: "May 2026",
+      summary: [
+        "Led a supportive and safe living environment for over 700 residents, enforcing housing policies and providing crisis management.",
+        "Facilitated mentorship and resource accessibility, working collaboratively within a diverse team of 22+ advisors.",
+      ],
+    },
+    {
+      company: "University of Missouri - Columbia | Dr. Praveen Rao Scalable Data Science Lab",
+      position: "Bioinformatics Research Intern",
+      startDate: "May 2023",
+      endDate: "May 2025",
+      summary: [
+        "Developed a robust pipeline for analyzing genomic data using Transformer models, clustering variants of COVID-19 patients to identify susceptibility factors.",
+        "Utilized Jupyter Notebook and RealVNC Viewer with GPU integration for large-scale data analysis, ensuring interactive and accessible results.",
+        "Presented findings at multiple national research forums, including ABRCMS and Mizzou research conferences.",
+        "Visualized genomic data from variant calling files (VCFs), providing clear and meaningful insights.",
+        "Gained foundational training in Python and basic machine learning techniques for genomic data analysis.",
+      ],
+    },
+    {
+      company: "University of Missouri - Columbia | Dr. Trupti Joshi Research Lab",
+      position: "Residential Advisor",
+      startDate: "August 2023",
+      endDate: "May 2026",
       summary: [
         "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
         "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
       ],
     },
-    {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
-    },
   ],
+
   projects: [
     {
       name: "Spotifu Music",
@@ -82,13 +98,14 @@ export const SITE_CONTENT: SiteContent = {
       image: "/clone-ig.png",
     },
   ],
+  
   about: {
     description: `
  Hi, I’m Myren Sutton! I'm a bioinformatics researcher and biomedical engineer passionate about using data to solve real world healthcare problems. My work focuses on combining machine learning, bioinformatics, and practical engineering to create tools that actually make a difference for patients.
 
 I’ve designed and developed projects ranging from clustering genomic variants of COVID-19 patients with transformer models to creating affordable, eco-friendly 3D-printed medical splints. I'm proficient in Python, R, MATLAB, and SolidWorks, and enjoy applying these skills to innovative medical technologies.
 
-Ultimately, I’m driven to make healthcare more inclusive and effective through thoughtful, data-driven design.
+Ultimately, I’m driven to make healthcare more inclusive and effective through thoughtful, data driven design.
     `,
     image: "/profilePhoto.png",
   },
