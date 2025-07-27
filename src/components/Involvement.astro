@@ -1,0 +1,38 @@
+---
+import type { InvolvementProps } from "../types";
+
+interface Props {
+  involvement: InvolvementProps[];
+}
+
+const { involvement } = Astro.props;
+---
+
+<section id="involvement" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Involvement & Leadership</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      {involvement.map((inv) => (
+        <div class="bg-gray-50 rounded-lg shadow-md p-6 border-l-4 border-green-500">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">{inv.role}</h3>
+              <p class="text-gray-700 font-medium">{inv.organization}</p>
+            </div>
+            <div class="text-right mt-2 md:mt-0">
+              <p class="text-gray-600">{inv.startDate} - {inv.endDate}</p>
+            </div>
+          </div>
+          <ul class="mt-4 space-y-2">
+            {inv.summary.map((item) => (
+              <li class="text-gray-700 flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 
