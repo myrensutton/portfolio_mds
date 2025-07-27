@@ -17,18 +17,20 @@ const { projects } = Astro.props;
       return (
         <div
           style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black max-w-6xl mx-auto"
         >
-          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+          <div class="bg-difu relative z-[1] grid h-auto min-h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:min-h-96">
+            <div class="px-6 pt-12 pb-6">
+              <h3 class="mb-5 font-serif text-3xl font-medium text-primary break-words">
                 {name}
               </h3>
               {timeline && (
                 <p class="mb-3 text-sm text-blue-400 font-medium">{timeline}</p>
               )}
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
+              <p class="text-base text-neutral leading-relaxed break-words overflow-hidden">
+                {summary}
+              </p>
+              <div class="flex gap-5 pt-6 text-white">
                 <a
                   href={linkSource}
                   target="_blank"

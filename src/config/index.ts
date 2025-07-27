@@ -35,15 +35,15 @@ export const SITE_CONTENT: SiteContent = {
     {
       institution: "University of Missouri - Columbia",
       degree: "MS Biological Engineering",
-      startDate: "Fall 2024",
+      startDate: "",
       endDate: "May 2026",
     },
     {
       institution: "University of Missouri - Columbia",
       degree: "BS Biomedical Engineering",
       track: "Bioinformatics",
-      startDate: "Fall 2021",
-      endDate: "May 2025",
+      startDate: "",
+      endDate: "",
       gpa: "3.76/4.0",
       honors: "College of Engineering Dean's High Honor List",
     },
@@ -111,7 +111,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       organization: "National Society of Black Engineers (NSBE)",
       role: "Technical Outreach Community Help (TORCH) Chair",
-      startDate: "August 2023",
+      startDate: "May 2025",
       endDate: "Present",
       summary: [
         "Coordinate and volunteer for classroom training and community service projects to make science and engineering accessible and engaging.",
