@@ -1,4 +1,5 @@
 ---
+import Section from "./Section.astro";
 import type { SkillsProps } from "../types";
 
 interface Props {
@@ -8,47 +9,44 @@ interface Props {
 const { skills } = Astro.props;
 ---
 
-<section id="skills" class="py-16 bg-black">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white">Technical Skills</h2>
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Programming Languages -->
-        <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-semibold text-white mb-4 text-center">Programming Languages</h3>
-          <div class="flex flex-wrap gap-2 justify-center">
-            {skills.languages.map((language) => (
-              <span class="bg-[#2a3441] text-blue-200 px-3 py-1 rounded-full text-sm font-medium">
-                {language}
-              </span>
-            ))}
-          </div>
+<Section text="Technical Skills" href="skills">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Programming Languages -->
+      <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold text-white mb-4 text-center">Programming Languages</h3>
+        <div class="flex flex-wrap gap-2 justify-center">
+          {skills.languages.map((language) => (
+            <span class="bg-[#2a3441] text-blue-200 px-3 py-1 rounded-full text-sm font-medium">
+              {language}
+            </span>
+          ))}
         </div>
+      </div>
 
-        <!-- Software -->
-        <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-semibold text-white mb-4 text-center">Software & Tools</h3>
-          <div class="flex flex-wrap gap-2 justify-center">
-            {skills.software.map((software) => (
-              <span class="bg-[#2a3441] text-green-200 px-3 py-1 rounded-full text-sm font-medium text-center">
-                {software}
-              </span>
-            ))}
-          </div>
+      <!-- Software -->
+      <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold text-white mb-4 text-center">Software & Tools</h3>
+        <div class="flex flex-wrap gap-2 justify-center">
+          {skills.software.map((software) => (
+            <span class="bg-[#2a3441] text-green-200 px-3 py-1 rounded-full text-sm font-medium text-center">
+              {software}
+            </span>
+          ))}
         </div>
+      </div>
 
-        <!-- Libraries -->
-        <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
-          <h3 class="text-xl font-semibold text-white mb-4 text-center">Libraries & Frameworks</h3>
-          <div class="flex flex-wrap gap-2 justify-center">
-            {skills.libraries.map((library) => (
-              <span class="bg-[#2a3441] text-purple-200 px-3 py-1 rounded-full text-sm font-medium">
-                {library}
-              </span>
-            ))}
-          </div>
+      <!-- Libraries -->
+      <div class="bg-[#1c232d] rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold text-white mb-4 text-center">Libraries & Frameworks</h3>
+        <div class="flex flex-wrap gap-2 justify-center">
+          {skills.libraries.map((library) => (
+            <span class="bg-[#2a3441] text-purple-200 px-3 py-1 rounded-full text-sm font-medium">
+              {library}
+            </span>
+          ))}
         </div>
       </div>
     </div>
   </div>
-</section> 
+</Section> 

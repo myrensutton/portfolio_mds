@@ -14,42 +14,45 @@ const { projects } = Astro.props;
   {
     projects.map(({ name, summary, image, linkPreview, linkSource, timeline }, index) => {
       const top = 98 + index * 40;
+      
+      // Define which projects should show GitHub links (the ones that currently don't have them)
+      const showGitHubLinks = [
+        "Genome Variant Calling & Phylogeny Pipeline",
+        "Structural Neuroinformatics of Chess Grandmasters",
+        "Production Scale Variant Calling Workflow"
+      ].includes(name);
+      
       return (
         <div
           style={`top: ${top}px;`}
           class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black max-w-6xl mx-auto"
         >
-          <div class="bg-difu relative z-[1] grid h-auto min-h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:min-h-96">
-            <div class="px-6 pt-12 pb-6">
+          <div class="bg-difu relative z-[1] grid w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1">
+            <div class="px-8 pt-12 pb-6 flex flex-col sm:col-span-1">
               <h3 class="mb-5 font-serif text-3xl font-medium text-primary break-words">
                 {name}
               </h3>
               {timeline && (
                 <p class="mb-3 text-sm text-blue-400 font-medium">{timeline}</p>
               )}
-              <p class="text-base text-neutral leading-relaxed break-words overflow-hidden">
+              <p class="text-base text-neutral leading-relaxed break-words flex-1 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
                 {summary}
               </p>
-              <div class="flex gap-5 pt-6 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                >
-                  Source
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
-              </div>
+              {showGitHubLinks && (
+                <div class="flex gap-5 pt-6 text-white mt-auto">
+                  <a
+                    href={linkSource}
+                    target="_blank"
+                    class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              )}
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
+            <div class="flex items-center justify-center sm:col-span-1 p-4">
               <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
+                class="max-h-full max-w-full rounded-ss-xl rounded-ee-2xl object-contain"
                 src={image}
                 alt={name}
                 width="736"
@@ -62,3 +65,22 @@ const { projects } = Astro.props;
     })
   }
 </Section>
+
+<style>
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+</style>

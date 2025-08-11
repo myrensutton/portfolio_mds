@@ -1,4 +1,5 @@
 ---
+import Section from "./Section.astro";
 import type { InvolvementProps } from "../types";
 
 interface Props {
@@ -8,31 +9,29 @@ interface Props {
 const { involvement } = Astro.props;
 ---
 
-<section id="involvement" class="py-16 bg-black">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white">Involvement & Leadership</h2>
-    <div class="max-w-4xl mx-auto space-y-8">
-      {involvement.map((inv) => (
-        <div class="bg-[#1c232d] rounded-lg shadow-md p-6 border-l-4 border-green-500">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 class="text-xl font-semibold text-white">{inv.role}</h3>
-              <p class="text-gray-200 font-medium">{inv.organization}</p>
-            </div>
-            <div class="text-right mt-2 md:mt-0">
-              <p class="text-gray-300">{inv.startDate} - {inv.endDate}</p>
-            </div>
-          </div>
-          <ul class="mt-4 space-y-2">
-            {inv.summary.map((item) => (
-              <li class="text-gray-300 flex items-start">
-                <span class="text-green-400 mr-2 mt-1">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+<Section text="Involvement & Leadership" href="involvement">
+  {
+    involvement.map((inv) => (
+      <div class="mb-10">
+        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
+          {inv.role}
+        </h3>
+        <div class="flex flex-col items-start pb-5">
+          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
+            {inv.organization}
+          </h4>
+          <span class="pb-[2px] text-sm text-white/70">
+            {inv.startDate} — {inv.endDate}
+          </span>
         </div>
-      ))}
-    </div>
-  </div>
-</section> 
+        <ul class="list-none">
+          {inv.summary.map((item) => (
+            <li class="relative mb-3 pl-8 text-base text-neutral before:absolute before:top-1 before:left-0 before:content-[url(/check.svg)]">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</Section> 

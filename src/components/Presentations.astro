@@ -1,4 +1,5 @@
 ---
+import Section from "./Section.astro";
 import type { PresentationProps } from "../types";
 
 interface Props {
@@ -8,23 +9,23 @@ interface Props {
 const { presentations } = Astro.props;
 ---
 
-<section id="presentations" class="py-16 bg-black">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white">Research Presentations</h2>
-    <div class="max-w-4xl mx-auto space-y-6">
-      {presentations.map((presentation) => (
-        <div class="bg-[#1c232d] rounded-lg shadow-md p-6 border-l-4 border-orange-500">
-          <h3 class="text-lg font-semibold text-white mb-2">{presentation.title}</h3>
-          <p class="text-gray-300 mb-2"><strong>Authors:</strong> {presentation.authors}</p>
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-            <p class="text-gray-200"><strong>Event:</strong> {presentation.event}</p>
-            <div class="text-right mt-2 md:mt-0">
-              <p class="text-gray-300">{presentation.date}</p>
-              <p class="text-gray-300">{presentation.location}</p>
-            </div>
-          </div>
+<Section text="Research Presentations" href="presentations">
+  {
+    presentations.map((presentation) => (
+      <div class="mb-10">
+        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
+          {presentation.title}
+        </h3>
+        <div class="flex flex-col items-start pb-5">
+          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
+            {presentation.authors}
+          </h4>
+          <span class="pb-[2px] text-sm text-white/70">
+            {presentation.event} — {presentation.date}
+          </span>
+          <p class="text-gray-300">{presentation.location}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section> 
+      </div>
+    ))
+  }
+</Section> 
