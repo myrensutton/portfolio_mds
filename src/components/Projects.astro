@@ -51,13 +51,19 @@ const { projects } = Astro.props;
               )}
             </div>
             <div class="flex items-center justify-center sm:col-span-1 p-4">
-              <Image
-                class="max-h-full max-w-full rounded-ss-xl rounded-ee-2xl object-contain"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
+              <div 
+                class="cursor-pointer hover:scale-105 transition-transform duration-200"
+                data-image-src={image}
+                data-image-alt={name}
+              >
+                <Image
+                  class="max-h-full max-w-full rounded-ss-xl rounded-ee-2xl object-contain"
+                  src={image}
+                  alt={name}
+                  width="736"
+                  height="483"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -84,3 +90,71 @@ const { projects } = Astro.props;
     background: #6b7280;
   }
 </style>
+
+<!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-95 hidden z-50 flex items-center justify-center p-4">
+  <div class="relative max-w-[95vw] max-h-[95vh]">
+    <button 
+      id="closeModal" 
+      class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 cursor-pointer z-10"
+    >
+      ×
+    </button>
+    <img id="modalImage" class="w-full h-auto max-h-[90vh] object-contain rounded-lg" src="" alt="" />
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementById('closeModal');
+    
+    // Add click listeners to all project images
+    document.addEventListener('click', function(e: Event) {
+      const target = e.target as HTMLElement;
+      if (!target) return;
+      
+      const imageContainer = target.closest('[data-image-src]') as HTMLElement;
+      if (imageContainer) {
+        const imageSrc = imageContainer.getAttribute('data-image-src');
+        const imageAlt = imageContainer.getAttribute('data-image-alt');
+        
+        if (modal && modalImg && imageSrc) {
+          (modalImg as HTMLImageElement).src = imageSrc;
+          (modalImg as HTMLImageElement).alt = imageAlt || '';
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        }
+      }
+    });
+    
+    // Close modal when clicking close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+    }
+    
+    // Close modal when clicking outside the image
+    if (modal) {
+      modal.addEventListener('click', function(e: Event) {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e: KeyboardEvent) {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  });
+</script>
